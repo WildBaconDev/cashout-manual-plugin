@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/resources/bootstrap-4.5.0-dist/css/bootstrap.min.css">
+</head>
+
+<body class="container" style="width: 315px;">
+
+  <form id="form-cashout-manual">
+
+    <div class="form-group row col" style="margin-top: 20px;">
+      <label for="site-aposta">Site de aposta</label>
+      <select class="form-control" id="site-aposta" name="site-aposta">
+        <option>Betway</option>
+        <option>Chivalry</option>
+      </select>
+    </div>
+
+    <div class="form-group row col">
+      <label for="qtd-apostada">Quantidade de dinheiro apostada</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">R$</span>
+        </div>
+        <input id="qtd-apostada" type="text" class="form-control" placeholder="100,00" name="qtd-apostada">
+      </div>
+    </div>
+
+    <div class="form-group row col">
+      <label for="odd-apostada">Odd no momento da aposta</label>
+      <input type="text" class="form-control" id="odd-apostada" name="odd-apostada">
+    </div>
+
+    <div class="row col" style="margin-bottom: 20px;">
+      <button type="button" id="submit-cashout-manual" class="btn btn-primary">Salvar</button>
+    </div>
+
+  </form>
+
+  <script src="/resources/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+  <script src="/resources/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+  <script src="/scripts/popup.ctrl.js"></script>
+
+
+</body>
+
+</html>
