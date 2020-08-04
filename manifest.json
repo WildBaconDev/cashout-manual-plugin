@@ -1,6 +1,6 @@
 {
     "name": "Cashout manual",
-    "version": "0.1",
+    "version": "0.2",
     "description": "Plugin para ficar verificando as odd's da betway/rivalry para cashout manual",
     "permissions": ["activeTab", "declarativeContent", "storage"],
     "background": {

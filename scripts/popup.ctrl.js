@@ -1,9 +1,13 @@
 'use strict';
 
+document.getElementById("popup-btn-listagem").addEventListener("click", function () {
+    window.open(
+        chrome.extension.getURL("/views/listagem.html"),
+        "Listagem de odds",
+        "width=770,height=400"
+    );
+});
 
-document.getElementById("submit-cashout-manual").addEventListener("click", function () {
-    // document.getElementById("demo").innerHTML = "Hello World";
-    console.log($("#form-cashout-manual").serializeArray())
-    console.log($("#form-cashout-manual"))
-    // alert("$('#form-cashout-manual')", $("#form-cashout-manual").serializeArray());
+document.getElementById("popup-btn-historico").addEventListener("click", function () {
+    console.log('Function not implemented')
 });
