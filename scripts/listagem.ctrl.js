@@ -33,6 +33,8 @@ function adicionarLinha(dados) {
         rowId = "odd-" + Math.random();
     }
 
+    calcularCashoutManual(dados);
+
     let oddRow = "" +
         "   <tr id=" + rowId + "> " +
         "       <td id=\"site-aposta\" name=\"site-aposta\"> " +
@@ -44,11 +46,11 @@ function adicionarLinha(dados) {
         "       <td id=\"odd-apostada\" name=\"odd-apostada\"> " +
         dados["odd-apostada"] +
         "       </td> " +
-        "       <td id=\"odd-apostada\" name=\"qtd-a-apostar\"> " +
-        '-' +
+        "       <td id=\"valor-a-apostar\" name=\"qtd-a-apostar\"> " +
+        dados["valor-a-apostar"] +
         "       </td> " +
-        "       <td id=\"odd-apostada\" name=\"odd-desejada\"> " +
-        '-' +
+        "       <td id=\"odd-a-apostar\" name=\"odd-a-apostar\"> " +
+        dados["odd-a-apostar"] +
         "       </td> " +
         "       <td class=\"btn-group\" role=\"group\"> " +
         "           <button id='editar-" + rowId + "' type=\"button\" class=\"btn btn-primary\">Editar</button>" +
@@ -59,6 +61,18 @@ function adicionarLinha(dados) {
 
     $('#listagem-odds').append(oddRow);
     adicionarEventos(rowId);
+}
+
+function calcularCashoutManual(dados) {
+    
+    let valor = parseFloat(dados["qtd-apostada"].replace(",","."));
+    let odd = parseFloat(dados["odd-apostada"].replace(",","."));
+
+    let valorApostar = valor * odd - valor;
+    let oddApostar = (valorApostar + valor)/valorApostar;
+
+    dados["valor-a-apostar"] = valorApostar.toFixed(2);
+    dados["odd-a-apostar"] = oddApostar.toFixed(2);
 }
 
 function adicionarEventos(id) {
