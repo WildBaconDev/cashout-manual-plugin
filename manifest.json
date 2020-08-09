@@ -2,7 +2,7 @@
     "name": "Cashout manual",
     "version": "0.3",
     "description": "Plugin para auxiliar o Cashout manual de Odds",
-    "permissions": ["activeTab", "declarativeContent", "storage"],
+    "permissions": ["declarativeContent"],
     "background": {
       "scripts": ["/scripts/background.js"],
       "persistent": false
